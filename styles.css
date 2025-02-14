@@ -105,7 +105,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .main-title {
-        font-size: 50px; /* Reduce font size for smaller screens */
+        font-size: 40px; /* Reduce font size for smaller screens */
     }
     .preloader {
         font-size: 3em; /* Reduce loader size */
