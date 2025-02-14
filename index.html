@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>neversmokegrabba</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="preloader">
+        <h1 class="typing">never</h1>
+    </div>
+    <main class="content hidden">
+        <h1 class="main-title">neversmokegrabba</h1>
+        <p class="subtitle">Producer</p>
+        <a href="store.html"><button class="store-button">Enter Store</button></a>
+        <div class="socials">
+            <a href="#" id="tiktok">TikTok</a>
+            <a href="#" id="instagram">Instagram</a>
+            <a href="#" id="soundcloud">SoundCloud</a>
+            <a href="#" id="twitter">X</a>
+        </div>
+        <audio id="background-audio" loop>
+            <source src="audio/sheq.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const audio = document.getElementById("background-audio");
+            
+            function playAudio() {
+                audio.play().catch(error => console.log("Autoplay blocked: ", error));
+            }
+            
+            // Wait for user interaction to play audio
+            document.addEventListener("click", () => {
+                playAudio();
+            }, { once: true });
+            
+            setTimeout(() => {
+                document.querySelector(".preloader").classList.add("fade-out");
+                setTimeout(() => {
+                    document.querySelector(".content").classList.remove("hidden");
+                    document.querySelector(".content").classList.add("fade-in");
+                }, 500);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

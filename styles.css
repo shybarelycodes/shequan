@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0 5%; /* Add padding to prevent text from touching edges on mobile */
+}
+
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-size: 5em;
+    font-weight: bold;
+    color: white;
+    opacity: 1;
+    animation: fadeText 4.3s ease-in-out forwards;
+}
+
+@keyframes fadeText {
+    0% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0; transform: scale(1); visibility: hidden; }
+}
+
+.hidden {
+    display: none;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1.6s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.main-title {
+    font-size: 120px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ff3b3b;
+}
+
+.subtitle {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: gray;
+}
+
+.store-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #ff3b3b;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.store-button:hover {
+    background-color: #cc1e1e;
+}
+
+.socials {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.socials a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s ease-in-out;
+}
+
+.socials a:hover {
+    color: #ff3b3b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 50px; /* Reduce font size for smaller screens */
+    }
+    .preloader {
+        font-size: 3em; /* Reduce loader size */
+    }
+    .subtitle {
+        font-size: 16px;
+    }
+    .store-button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+    .socials a {
+        font-size: 1.2em;
+    }
+}
